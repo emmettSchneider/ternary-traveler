@@ -1,0 +1,29 @@
+{
+  "places": [
+    { 
+      "id": 1, 
+      "name": "San Jose", 
+      "visa_required": true 
+    },
+    { 
+      "id": 2, 
+      "name": "Panama City", 
+      "visa_required": false 
+    },
+    { 
+      "id": 3, 
+      "name": "San Salvador", 
+      "visa_required": true
+    }
+  ],
+  "interests": [
+    {
+      "id": 1,
+      "poiName": "Panama Canal",
+      "description": "Operating since 1914 and considered one of the wonders of the world, this fifty-mile waterway transports ships by raising them from sea level to more than 85 feet via a series of gravity-powered locks.",
+      "cost": "20.00",
+      "placeId": 2,
+      "review": "I'm obsessed with shipping containers, so this place was a MUST SEE for me. There were definitely A LOT of shipping containers. I wonder if any of them contained something I'm going to purchase from Amazon in the future... How exciting!!! A++++"
+    }
+  ]
+}
