@@ -1,5 +1,6 @@
 // This module is responsbile for creating and appending the POI form to the DOM.
 import data from "./data"
+import poiList from "./poiList"
 
 const poiForm = {
 
@@ -83,6 +84,11 @@ const poiForm = {
       cost: inputPoiCost
     }
     console.log(newInterest)
+    
+    data.postNewInterest(newInterest)
+    .then(response => {
+    poiList.outputPoi()
+    })
   }
 }
 
