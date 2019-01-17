@@ -4,11 +4,10 @@ const poiList = {
   outputPoi(){
     data.getExpandedInterests()
     .then(allInterests => {
-
       let poiDocFragment = document.createDocumentFragment()
 
       allInterests.forEach(interest => {
-        let poiHtml = interests.poiBuilder(interestObject)
+        let poiHtml = interests.poiBuilder(interest, interest.id)
         poiDocFragment.appendChild(poiHtml)
       })
 
@@ -19,28 +18,28 @@ const poiList = {
       }
       outputArticle.appendChild(poiDocFragment)
 
-    })
+    });
   }
 }
 
 const interests = {
 
-  poiBuilder(interestObject) {
+  poiBuilder(interest, id) {
     
   let interestArticle = document.createElement("article")
-  interestArticle.setAttribute("id", `interest--${interestObject.id}`)
+  interestArticle.setAttribute("id", `interest--${interest.id}`)
 
   let poiName = document.createElement("h5")
-  poiName.textContent = interestObject.poiName
+  poiName.textContent = interest.poiName
 
   let poiDescription = document.createElement("p")
-  poiDescription.textContent = interestObject.description
+  poiDescription.textContent = interest.description
 
   let poiCost = document.createElement("p")
-  poiCost.textContent = interestObject.cost
+  poiCost.textContent = interest.cost
 
   let poiPlace = document.createElement("p")
-  poiPlace.textContent = interestObject.place
+  poiPlace.textContent = interest.place.name
 
   // Edit functionality
 
@@ -51,7 +50,7 @@ const interests = {
     let interestId = articleId.split("--")[1]
     data.getExpandedInterests(interestId)
     .then(response => {
-      interestEditForm.createAndAppendForm(articleId, response)
+      poiEditForm.createAndAppendForm(articleId, response)
     })
   })
 
@@ -59,7 +58,7 @@ const interests = {
     deletePoiButton.textContent = "Delete"
     deletePoiButton.addEventListener("click", () => {
       let poiId = event.target.parentNode.id.split("--")[1]
-      foodCollection.deletePoi(poiId)
+      data.deletePoi(poiId)
       .then(response => {
         poiList.outputPoi()
       })
