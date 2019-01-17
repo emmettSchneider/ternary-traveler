@@ -24,7 +24,7 @@ const poiList = {
 
 const interests = {
 
-  poiBuilder(interest, id) {
+  poiBuilder(interest) {
     
   let interestArticle = document.createElement("article")
   interestArticle.setAttribute("id", `interest--${interest.id}`)
@@ -39,13 +39,13 @@ const interests = {
   poiCost.textContent = interest.cost
 
   let poiPlace = document.createElement("p")
-  poiPlace.textContent = interest.place.name
+  poiPlace.textContent = interest.name
 
   // Edit functionality
 
   let editPoiButton = document.createElement("button")
-  editMessageButton.textContent = "Edit Place of Interest"
-  editMessageButton.addEventListener("click", () => {
+  editPoiButton.textContent = "Edit Place of Interest"
+  editPoiButton.addEventListener("click", () => {
     let articleId = event.target.parentNode.id
     let interestId = articleId.split("--")[1]
     data.getExpandedInterests(interestId)
@@ -66,6 +66,7 @@ const interests = {
 
   interestArticle.appendChild(poiName)
   interestArticle.appendChild(poiDescription)
+  interestArticle.appendChild(poiCost)
   interestArticle.appendChild(poiCost)
   interestArticle.appendChild(deletePoiButton)
   interestArticle.appendChild(editPoiButton)
@@ -129,9 +130,10 @@ const poiEditForm = {
     // There is an event listener on the Update button which will take the new values in the input fields and build an object for the food item to be edited. Then we make a HTTP PUT request where we target the food item we want to edit by specifying the id in the URL. We also pass the object representing the food item with the new values as data in our HTTP request. Once again, because our data has been modified, we make an HTTP GET request to get all the food items and display them.
     updateButton.addEventListener("click", () => {
       let editedPoi = {
-        name: inputPoiName,
-        description: inputPoiDescription,
-        cost: inputPoiCost
+        name: poiNameInput,
+        description: poiDescriptionInput,
+        cost: poiCostInput, 
+        placeId: 1
       }
       
       data.postNewInterest(InterestObjToEdit.id, editedPoi)

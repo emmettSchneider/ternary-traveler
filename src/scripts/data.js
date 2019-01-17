@@ -5,15 +5,15 @@
 const data = {
   // This method returns a fetch, which means it is returning a promise. Which means to access the response from the asynchronous HTTP GET request that is being made by this fetch, we can chain a .then at the point where this method(getAllMessages) is called. The .then then is chained to the fetch inside the method is parsing the data from JSON to data structures Javascript will understand. In this case, because we have a collection of messages, it will be an array of objects.
 
-  getAllInterests() {
-    return fetch("http://localhost:8088/interests")
+  getAllPlaces() {
+    return fetch("http://localhost:8088/places")
     .then(response => response.json())
   },
   
   getExpandedInterests() {
     return fetch("http://localhost:8088/interests?_expand=place")
     .then(response => response.json())
-    .then(test => console.log(test))
+    // .then(test => console.log(test))
   
   },
 

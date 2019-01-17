@@ -52,6 +52,32 @@ const poiForm = {
     poiCostField.appendChild(poiCostLabel)
     poiCostField.appendChild(poiCostInput)
 
+    let poiReviewField = document.createElement("fieldset")
+
+    let poiReviewLabel = document.createElement("label")
+    poiReviewLabel.textContent = "Review"
+    poiReviewLabel.setAttribute("for", "poi__review")
+    
+    let poiReviewInput = document.createElement("input")
+    poiReviewInput.setAttribute("id", "poi__review")
+    poiReviewInput.setAttribute("name", "poi__review")
+
+    poiReviewField.appendChild(poiReviewLabel)
+    poiReviewField.appendChild(poiReviewInput)
+
+    let poiPlaceSelect = document.createElement("select")
+    poiPlaceSelect.setAttribute("id", "poi__place")
+    poiPlaceSelect.setAttribute("name", "poi__place")
+
+    data.getAllPlaces()
+    .then(allPlaces => {
+      allPlaces.forEach(place => {
+      let placeOption = document.createElement("option")
+      placeOption.textContent =+ place.name
+      placeOption.setAttribute("value", place.id)
+      placeOption.setAttribute("class", "poi__place")
+      poiPlaceSelect.appendChild(placeOption) //ENDED HERE
+
     let saveButton = document.createElement("button")
     saveButton.textContent = "Save Place of Interest"
     saveButton.setAttribute("class", "poi__save")
@@ -63,6 +89,7 @@ const poiForm = {
     poiFormFragment.appendChild(formHeader)
     poiFormFragment.appendChild(poiNameField)
     poiFormFragment.appendChild(poiDescriptionField)
+    poiFormFragment.appendChild(poiCostField)
     poiFormFragment.appendChild(poiCostField)
     poiFormFragment.appendChild(saveButton)
 
@@ -81,7 +108,8 @@ const poiForm = {
     {
       name: inputPoiName,
       description: inputPoiDescription,
-      cost: inputPoiCost
+      cost: inputPoiCost,
+      placeId: 1
     }
     console.log(newInterest)
     
