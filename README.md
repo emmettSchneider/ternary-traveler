@@ -58,10 +58,10 @@ As a user, I should be able to enter in an point of interest, and associate it w
 **Given** a user wants to keep track of a new point of interest  
 **When** the user opens the application  
 **Then** a form should be presented to the user in which the following properties of the point of interest can be provided
-1. Name of the point of interest
-1. Description of the point of interest
-1. Cost of visiting the point of interest
-1. Dropdown to pick which place the point of interest is located in
+  1. Name of the point of interest
+  1. Description of the point of interest
+  1. Cost of visiting the point of interest
+  1. Dropdown to pick which place the point of interest is located in
 
 - [X]
 **Given** a user has entered in all details of a point of interest  
