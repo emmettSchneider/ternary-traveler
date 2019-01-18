@@ -9,6 +9,11 @@ const data = {
     return fetch("http://localhost:8088/places")
     .then(response => response.json())
   },
+
+  getAllInterests() {
+    return fetch("http://localhost:8088/interests")
+    .then(response => response.json())
+  },
   
   getExpandedInterests() {
     return fetch("http://localhost:8088/interests?_expand=place")
@@ -35,9 +40,9 @@ const data = {
         }
     })
   },
-  putExistingInterest(interestId, interestToEdit) {
+  patchExistingInterest(interestId, interestToEdit) {
     return fetch(`http://localhost:8088/interests/${interestId}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
           "Content-Type": "application/json"
       },
