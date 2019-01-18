@@ -44,7 +44,7 @@ const interests = {
   editPoiButton.addEventListener("click", () => {
     let articleId = event.target.parentNode.id
     let interestId = articleId.split("--")[1]
-    data.getAllInterests(interestId)
+    data.getInterests(interestId)
     .then(response => {
       poiEditForm.createAndAppendForm(articleId, response)
     })

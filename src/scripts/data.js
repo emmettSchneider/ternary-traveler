@@ -10,8 +10,8 @@ const data = {
     .then(response => response.json())
   },
 
-  getAllInterests() {
-    return fetch("http://localhost:8088/interests")
+  getInterests(interestId) {
+    return fetch(`http://localhost:8088/interests/${interestId}`)
     .then(response => response.json())
   },
   

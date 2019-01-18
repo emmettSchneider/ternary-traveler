@@ -61,7 +61,7 @@ const poiEditForm = {
     while (poiArticle.firstChild) {
       poiArticle.removeChild(poiArticle.firstChild);
     }
-    poiArticle.appendChild(poiReviewField)
+    poiArticle.appendChild(poiCostField)
     poiArticle.appendChild(poiReviewField)
     poiArticle.appendChild(updateButton)
   }
