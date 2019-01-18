@@ -65,6 +65,10 @@ const poiForm = {
     poiReviewField.appendChild(poiReviewLabel)
     poiReviewField.appendChild(poiReviewInput)
 
+    let poiPlaceLabel =  document.createElement("label")
+    poiPlaceLabel.textContent = "Select City"
+    poiPlaceLabel.setAttribute("for", "poi__place")
+
     let poiPlaceSelect = document.createElement("select")
     poiPlaceSelect.setAttribute("id", "poi__place")
     poiPlaceSelect.setAttribute("name", "poi__place")
@@ -73,10 +77,12 @@ const poiForm = {
     .then(allPlaces => {
       allPlaces.forEach(place => {
       let placeOption = document.createElement("option")
-      placeOption.textContent =+ place.name
+      placeOption.textContent += place.name
       placeOption.setAttribute("value", place.id)
       placeOption.setAttribute("class", "poi__place")
-      poiPlaceSelect.appendChild(placeOption) //ENDED HERE
+      poiPlaceSelect.appendChild(placeOption)
+      })
+    })
 
     let saveButton = document.createElement("button")
     saveButton.textContent = "Save Place of Interest"
@@ -90,7 +96,7 @@ const poiForm = {
     poiFormFragment.appendChild(poiNameField)
     poiFormFragment.appendChild(poiDescriptionField)
     poiFormFragment.appendChild(poiCostField)
-    poiFormFragment.appendChild(poiCostField)
+    poiFormFragment.appendChild(poiPlaceSelect)
     poiFormFragment.appendChild(saveButton)
 
     let formArticle = document.querySelector(".form")
@@ -103,13 +109,16 @@ const poiForm = {
     let inputPoiName = document.querySelector("#poi__name").value
     let inputPoiDescription = document.querySelector("#poi__description").value
     let inputPoiCost = document.querySelector("#poi__cost").value
+    let inputPoiPlace = document.querySelector("#poi__place").value
+    let inputPoiReview = `You haven't reviewed ${inputPoiName} yet. Press the Review/Edit Button to share your thoughts!`
 
     let newInterest =
     {
       name: inputPoiName,
       description: inputPoiDescription,
       cost: inputPoiCost,
-      placeId: 1
+      placeId: inputPoiPlace,
+      review: inputPoiReview
     }
     console.log(newInterest)
     

@@ -29,14 +29,30 @@ const interests = {
   let interestArticle = document.createElement("article")
   interestArticle.setAttribute("id", `interest--${interest.id}`)
 
-  let poiName = document.createElement("h5")
-  poiName.textContent = interest.poiName
+
+  let poiName = document.createElement("h2")
+  poiName.textContent = interest.name
+
+  let poiDescriptionHeader = document.createElement("h3")
+  poiDescriptionHeader.textContent = "Description"
 
   let poiDescription = document.createElement("p")
   poiDescription.textContent = interest.description
 
+  let poiCostHeader = document.createElement("h3")
+  poiCostHeader.textContent = "Cost"
+
   let poiCost = document.createElement("p")
   poiCost.textContent = interest.cost
+
+  let poiReviewHeader = document.createElement("h3")
+  poiReviewHeader.textContent = "Review"
+
+  let poiReview = document.createElement("p")
+  poiReview.textContent = interest.review
+
+  let poiPlaceHeader = document.createElement("h3")
+  poiPlaceHeader.textContent = "Place"
 
   let poiPlace = document.createElement("p")
   poiPlace.textContent = interest.name
@@ -58,16 +74,19 @@ const interests = {
     deletePoiButton.textContent = "Delete"
     deletePoiButton.addEventListener("click", () => {
       let poiId = event.target.parentNode.id.split("--")[1]
-      data.deletePoi(poiId)
+      data.deleteInterest(poiId)
       .then(response => {
         poiList.outputPoi()
       })
     })
 
   interestArticle.appendChild(poiName)
+  interestArticle.appendChild(poiDescriptionHeader)
   interestArticle.appendChild(poiDescription)
+  interestArticle.appendChild(poiCostHeader)
   interestArticle.appendChild(poiCost)
-  interestArticle.appendChild(poiCost)
+  interestArticle.appendChild(poiReviewHeader)
+  interestArticle.appendChild(poiReview)
   interestArticle.appendChild(deletePoiButton)
   interestArticle.appendChild(editPoiButton)
 
