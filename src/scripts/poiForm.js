@@ -16,7 +16,7 @@ const poiForm = {
     let poiNameLabel = document.createElement("label")
     poiNameLabel.textContent = "Name"
     poiNameLabel.setAttribute("for", "poi__name")
-    
+
     let poiNameInput = document.createElement("input")
     poiNameInput.setAttribute("id", "poi__name")
     poiNameInput.setAttribute("name", "poi__name")
@@ -44,7 +44,7 @@ const poiForm = {
     let poiCostLabel = document.createElement("label")
     poiCostLabel.textContent = "Cost"
     poiCostLabel.setAttribute("for", "poi__cost")
-    
+
     let poiCostInput = document.createElement("input")
     poiCostInput.setAttribute("id", "poi__cost")
     poiCostInput.setAttribute("name", "poi__cost")
@@ -57,7 +57,7 @@ const poiForm = {
     let poiReviewLabel = document.createElement("label")
     poiReviewLabel.textContent = "Review"
     poiReviewLabel.setAttribute("for", "poi__review")
-    
+
     let poiReviewInput = document.createElement("input")
     poiReviewInput.setAttribute("id", "poi__review")
     poiReviewInput.setAttribute("name", "poi__review")
@@ -65,7 +65,7 @@ const poiForm = {
     poiReviewField.appendChild(poiReviewLabel)
     poiReviewField.appendChild(poiReviewInput)
 
-    let poiPlaceLabel =  document.createElement("label")
+    let poiPlaceLabel = document.createElement("label")
     poiPlaceLabel.textContent = "Select City"
     poiPlaceLabel.setAttribute("for", "poi__place")
 
@@ -74,15 +74,15 @@ const poiForm = {
     poiPlaceSelect.setAttribute("name", "poi__place")
 
     data.getAllPlaces()
-    .then(allPlaces => {
-      allPlaces.forEach(place => {
-      let placeOption = document.createElement("option")
-      placeOption.textContent += place.name
-      placeOption.setAttribute("value", place.id)
-      placeOption.setAttribute("class", "poi__place")
-      poiPlaceSelect.appendChild(placeOption)
+      .then(allPlaces => {
+        allPlaces.forEach(place => {
+          let placeOption = document.createElement("option")
+          placeOption.textContent += place.name
+          placeOption.setAttribute("value", place.id)
+          placeOption.setAttribute("class", "poi__place")
+          poiPlaceSelect.appendChild(placeOption)
+        })
       })
-    })
 
     let saveButton = document.createElement("button")
     saveButton.textContent = "Save Place of Interest"
@@ -119,12 +119,21 @@ const poiForm = {
       placeId: inputPoiPlace,
       review: inputPoiReview
     }
-    
+
     data.postNewInterest(newInterest)
-    .then(response => {
-    poiList.outputPoi()
-    })
+      .then(response => {
+        poiList.outputPoi()
+        poiForm.clearForm()
+        // document.querySelector("#poi__name").value.reset()
+      })
+  },
+
+  clearForm() {
+    document.querySelector("#poi__name").value = "";
+    document.querySelector("#poi__description").value = "";
+    document.querySelector("#poi__cost").value = "";
   }
+
 }
 
 export default poiForm
