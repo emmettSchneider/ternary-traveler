@@ -68,7 +68,7 @@ As a user, I should be able to enter in an point of interest, and associate it w
 **When** the user performs a gesture to save the point of interest  
 **Then** the point of interest should be displayed in the application
 
-- [ ]
+- [X]
 **Given** a user wants to change the cost of a point of interest or add/change the review to a point of interest  
 **When** the user performs a gesture to edit the point of interest  
 **Then** the user should be presented with a form that has the cost and review, if it's not blank, pre-filled  
@@ -80,19 +80,19 @@ As a user, I should be able to enter in an point of interest, and associate it w
 **Then** all points of interest should be displayed  
 **And** each point of interest should have an affordance to delete it
 
-- [ ]
+- [X]
 **Given** a user wants to remove a previously stored point of interest  
 **When** the user performs a gesture on the delete affordance  
 **Then** the user should be prompted to confirm the delete
 
-- [ ]
+- [X]
 **Given** a user is viewing the delete prompt
 **When** the user selects the confirmation affordance
 **Then** the point of interest should be deleted
 **And** the confirmation message should disappear
 **And** the list of points of interest should be refreshed
 
-- [ ]
+- [X]
 **Given** a user is viewing the delete prompt
 **When** the user selects the cancel affordance
 **Then** the point of interest should NOT be deleted
