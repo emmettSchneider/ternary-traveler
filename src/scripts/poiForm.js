@@ -108,7 +108,7 @@ const poiForm = {
     let inputPoiName = document.querySelector("#poi__name").value
     let inputPoiDescription = document.querySelector("#poi__description").value
     let inputPoiCost = document.querySelector("#poi__cost").value
-    let inputPoiPlace = document.querySelector("#poi__place").value
+    let inputPoiPlace = parseInt(document.querySelector("#poi__place").value)
     let inputPoiReview = `You haven't reviewed ${inputPoiName} yet. Press the Edit button to share your thoughts!`
 
     let newInterest =

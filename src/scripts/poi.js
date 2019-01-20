@@ -11,7 +11,7 @@ const interests = {
 
 
     let poiName = document.createElement("h2")
-    poiName.textContent = interest.name
+    poiName.textContent = `${interest.name}, ${interest.place.name}`
 
     let poiDescriptionHeader = document.createElement("h3")
     poiDescriptionHeader.textContent = "Description"
@@ -35,7 +35,8 @@ const interests = {
     poiPlaceHeader.textContent = "Place"
 
     let poiPlace = document.createElement("p")
-    poiPlace.textContent = interest.name
+    poiPlace.textContent = interest.place.name
+    console.log(interest.place.name)
 
     // Edit functionality
 
