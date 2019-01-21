@@ -1,29 +1,69 @@
 {
   "places": [
-    { 
-      "id": 1, 
-      "name": "San Jose", 
-      "visa_required": true 
+    {
+      "id": 1,
+      "name": "San Jose",
+      "visa_required": true
     },
-    { 
-      "id": 2, 
-      "name": "Panama City", 
-      "visa_required": false 
+    {
+      "id": 2,
+      "name": "Panama City",
+      "visa_required": false
     },
-    { 
-      "id": 3, 
-      "name": "San Salvador", 
+    {
+      "id": 3,
+      "name": "San Salvador",
       "visa_required": true
     }
   ],
   "interests": [
     {
       "id": 1,
-      "poiName": "Panama Canal",
+      "name": "Panama Canal",
       "description": "Operating since 1914 and considered one of the wonders of the world, this fifty-mile waterway transports ships by raising them from sea level to more than 85 feet via a series of gravity-powered locks.",
-      "cost": "20.00",
+      "cost": "$20.00",
       "placeId": 2,
       "review": "I'm obsessed with shipping containers, so this place was a MUST SEE for me. There were definitely A LOT of shipping containers. I wonder if any of them contained something I'm going to purchase from Amazon in the future... How exciting!!! A++++"
+    },
+    {
+      "id": 2,
+      "name": "Parque Nacional El Boqueron",
+      "description": "Parque El Boquerón, or El Boqueron Park, is located on top of the San Salvador Volcano at 5,905 feet (1800 meters) the park's main attraction is a crater five kilometers in diameter and 558 meters deep. In addition, there is a small crater within the crater named “Boqueroncito” (little Boquerón).",
+      "cost": "Free!",
+      "placeId": 3,
+      "review": "When I was in elementary school, my science fair project was a volcano that erupted when you added something or other (I don't remember what!). Although the park was breathtakingly beautiful, the volcano didn't erupt. EL SALVADOR, I AM DISAPPOINT! Wish I could remember what made my science fair volcano erupt. I bet that would have done it! C++"
+    },
+    {
+      "name": "Panama City Airport",
+      "description": "This is an airport.",
+      "cost": "Cost of your flight?",
+      "placeId": 2,
+      "review": "This is the hub for Copa. I'd rather fly Avianca.",
+      "id": 4
+    },
+    {
+      "name": "New Place",
+      "description": "This is a place",
+      "cost": "More than I thought",
+      "placeId": 3,
+      "review": "This is definitely a place.",
+      "id": 5
+    },
+    {
+      "name": "Wal-Mart",
+      "description": "This is a big store.",
+      "cost": "Watch for falling prices.",
+      "placeId": 2,
+      "review": "You haven't reviewed Wal-Mart yet. Press the Edit button to share your thoughts!",
+      "id": 6
+    },
+    {
+      "name": "Teatro Nacional Costa Rica",
+      "description": "The National Theatre of Costa Rica (Spanish: Teatro Nacional de Costa Rica) is Costa Rica's national theatre, located in the central section of San José. Construction began in 1891, and it opened to the public on October, 21, 1897, with a performance of Johann Wolfgang von Goethe's Faust.",
+      "cost": "$10.00",
+      "placeId": 1,
+      "review": "I thought this was a movie theater, but the performances were actually live. I was hoping to watch a movie. B-",
+      "id": 7
     }
   ]
 }
