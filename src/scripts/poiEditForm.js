@@ -1,5 +1,6 @@
 import data from "./data"
 import poiList from "./poiList"
+import interests from "./poi";
 
 const poiEditForm = {
   // This module will build an edit form and append it to the DOM. The form will contain input fields with existing values from the API and an Update button. The user can edit the the values in the input fields. An event listener on the Update button will handle taking the new values entered by the user and calling the API to update the data.
@@ -12,7 +13,7 @@ const poiEditForm = {
 
     let poiCostLabel = document.createElement("label")
     poiCostLabel.textContent = "Cost"
-    
+
     let poiCostInput = document.createElement("input")
     poiCostInput.value = interestObjToEdit.cost
 
@@ -26,7 +27,7 @@ const poiEditForm = {
 
     poiReviewLabel.textContent = "Review"
     poiReviewLabel.setAttribute("for", "poi__review")
-    
+
     let poiReviewInput = document.createElement("input")
     poiReviewInput.value = interestObjToEdit.review
 
@@ -47,7 +48,7 @@ const poiEditForm = {
       }
 
       console.log(editedPoi)
-      
+
       data.patchExistingInterest(interestObjToEdit.id, editedPoi)
       .then(response => {
         poiList.outputPoi()
@@ -61,6 +62,8 @@ const poiEditForm = {
     while (poiArticle.firstChild) {
       poiArticle.removeChild(poiArticle.firstChild);
     }
+
+    poiArticle.appendChild(formHeader)
     poiArticle.appendChild(poiCostField)
     poiArticle.appendChild(poiReviewField)
     poiArticle.appendChild(updateButton)

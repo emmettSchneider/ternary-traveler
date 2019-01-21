@@ -8,7 +8,7 @@ const poiForm = {
 
   createAndAppendForm() {
 
-    let formHeader = document.createElement("h4")
+    let formHeader = document.createElement("h2")
     formHeader.textContent = "Add a Point of Interest"
 
     let poiNameField = document.createElement("fieldset")
